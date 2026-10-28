@@ -1,0 +1,17 @@
+{
+  "name": "dsh-eval",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "A self-verifying local coding-agent eval harness: fixed tasks, automatic checks, contamination audit, token attribution.",
+  "license": "MIT",
+  "scripts": {
+    "selftest": "node harness.mjs selftest",
+    "list": "node harness.mjs list",
+    "report": "node report.mjs",
+    "tokens": "node tokens.mjs"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  }
+}
