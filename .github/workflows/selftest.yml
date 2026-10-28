@@ -1,0 +1,29 @@
+name: task-selftest
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  selftest:
+    name: "selftest (node ${{ matrix.node }})"
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # 只跑任务自检：每个任务必须「桩 FAIL、参考解 PASS」。
+      # 任务写错时 CI 立刻红，避免用坏任务跑出假结论。
+      - name: Task selftest
+        run: node harness.mjs selftest

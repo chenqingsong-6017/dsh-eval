@@ -1,5 +1,7 @@
 # dsh-eval
 
+[![task-selftest](https://github.com/chenqingsong-6017/dsh-eval/actions/workflows/selftest.yml/badge.svg)](https://github.com/chenqingsong-6017/dsh-eval/actions/workflows/selftest.yml)
+
 > 一个**能自证、能查污染**的本地编码 agent 评测套件。
 > 给那些在公开榜上查不到成绩、又不想只靠"模型说它通过了"的 harness 用。
 
